@@ -1124,6 +1124,19 @@ search_queries:
     query: 'site:linkedin.com/jobs "Software Engineer" OR "Backend Engineer" OR "Frontend Engineer" Turkey OR Türkiye OR Ankara OR Istanbul'
     enabled: false
 
+  # -- India Job Portals (LinkedIn, Indeed, Naukri) --
+  - name: LinkedIn — India Software / Backend / Full Stack
+    query: 'site:linkedin.com/jobs/view ("Full Stack" OR "Backend Developer" OR "Software Engineer" OR "Node.js") India OR Bangalore OR Bengaluru OR Pune OR Remote'
+    enabled: true
+
+  - name: Indeed — India Software / Backend / Full Stack
+    query: 'site:in.indeed.com/viewjob OR site:indeed.com/viewjob ("Full Stack" OR "Backend Developer" OR "Software Engineer" OR "Node.js") India OR Bangalore OR Remote'
+    enabled: true
+
+  - name: Naukri — India Software / Backend / Full Stack
+    query: 'site:naukri.com/job-listings ("Full Stack" OR "Backend Developer" OR "Software Engineer" OR "Node.js") India OR Bangalore OR Bengaluru OR Remote'
+    enabled: true
+
 # -- Tracked companies --
 # Companies whose career pages are checked directly.
 # scan_method: playwright (default), websearch, local_parser
