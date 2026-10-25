@@ -7,6 +7,7 @@
     "node": "^22.13.0 || >=23.4.0"
   },
   "scripts": {
+    "bridge": "node scripts/extension-bridge.mjs",
     "doctor": "node doctor.mjs",
     "ui": "node scripts/ui-server.mjs",
     "or": "node openrouter-runner.mjs",

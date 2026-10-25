@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Ops Clipper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 96 96" width="20" height="20">
+            <rect width="96" height="96" rx="14" fill="#D5742E"/>
+            <path d="M 32 64 Q 28 64 26 62 Q 21 55 21 45 Q 21 34 27 26 Q 31 23 35 23 Q 40 25 41 26 L 41 36 Q 38 32 37 29 Q 34 25 33 25 Q 28 29 27 33 Q 25 37 25 43 Q 25 52 28 56 Q 30 60 33 60 Q 38 58 41 50 L 43 51 Q 40 62 37 63 Z" fill="#FFF"/>
+            <path d="M 61 64 Q 54 62 49 54 Q 47 49 47 44 Q 47 38 49 33 Q 54 26 61 26 Q 68 26 73 33 Q 75 38 75 44 Q 75 49 73 54 Q 68 62 61 64 ZM 61 62 Q 69 62 69 44 Q 69 25 61 25 Q 53 25 53 44 Q 53 62 61 62 Z" fill="#FFF"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Career Ops</span>
+          <span class="brand-tag" id="platformBadge">Detecting...</span>
+        </div>
+      </div>
+      <div class="connection-status" id="connectionStatus" title="Connection to local Career Ops bridge">
+        <span class="status-dot"></span>
+        <span class="status-label" id="connectionLabel">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Offline Alert Banner -->
+    <div class="banner banner-warning hidden" id="offlineBanner">
+      <div class="banner-content">
+        <span class="banner-icon">⚡</span>
+        <span class="banner-text">Bridge offline. Run <code>npm run bridge</code> or copy row below.</span>
+      </div>
+      <button class="btn-copy-cmd" id="copyCmdBtn" title="Copy start command">Copy Cmd</button>
+    </div>
+
+    <!-- Alert / Message Banner -->
+    <div class="alert hidden" id="alertBox"></div>
+
+    <!-- Main Content -->
+    <main class="main-form">
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="e.g. Senior Backend Engineer" autocomplete="off">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group flex-1">
+          <label for="companyName">Company</label>
+          <input type="text" id="companyName" placeholder="e.g. Stripe" autocomplete="off">
+        </div>
+        <div class="form-group flex-1">
+          <label for="jobLocation">Location</label>
+          <input type="text" id="jobLocation" placeholder="e.g. Remote · India" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="jobCompensation">Compensation (Optional)</label>
+        <input type="text" id="jobCompensation" placeholder="e.g. 30-45 LPA or $140k-$180k" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="jobUrl">Posting URL</label>
+        <input type="url" id="jobUrl" placeholder="https://..." autocomplete="off">
+      </div>
+
+      <!-- Collapsible JD Preview -->
+      <details class="jd-details" id="jdDetails">
+        <summary class="jd-summary">
+          <span>Job Description</span>
+          <span class="jd-meta" id="jdCharCount">0 chars</span>
+        </summary>
+        <div class="jd-body">
+          <textarea id="jobDescription" placeholder="Extracted job description text..." rows="4"></textarea>
+        </div>
+      </details>
+
+      <!-- Pipeline Row Preview -->
+      <div class="preview-box">
+        <div class="preview-header">
+          <span>Pipeline Row Preview</span>
+          <span class="preview-badge">data/pipeline.md</span>
+        </div>
+        <div class="preview-content" id="rowPreview">- [ ] ...</div>
+      </div>
+
+      <!-- Options -->
+      <div class="options-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="saveJdCheckbox" checked>
+          <span>Save JD archive to <code>jds/</code></span>
+        </label>
+      </div>
+    </main>
+
+    <!-- Footer Actions -->
+    <footer class="app-footer">
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="addPipelineBtn">
+          <span class="btn-spinner hidden" id="btnSpinner"></span>
+          <span id="btnAddText">+ Add to Pipeline</span>
+        </button>
+        <button class="btn btn-secondary" id="copyRowBtn" title="Copy formatted pipeline row">
+          <span>📋 Copy Row</span>
+        </button>
+        <button class="btn btn-secondary btn-icon" id="copyJdBtn" title="Copy full JD text">
+          <span>📄</span>
+        </button>
+      </div>
+
+      <div class="footer-meta">
+        <span id="pipelineCountText">Pipeline: --</span>
+        <button class="btn-link" id="settingsToggleBtn">Settings</button>
+      </div>
+
+      <!-- Settings Panel -->
+      <div class="settings-panel hidden" id="settingsPanel">
+        <div class="settings-group">
+          <label for="bridgeUrlInput">Local Bridge URL</label>
+          <div class="settings-input-row">
+            <input type="text" id="bridgeUrlInput" placeholder="http://127.0.0.1:3456">
+            <button class="btn btn-sm" id="saveSettingsBtn">Save</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
