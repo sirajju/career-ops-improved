@@ -1137,6 +1137,52 @@ search_queries:
     query: 'site:naukri.com/job-listings ("Full Stack" OR "Backend Developer" OR "Software Engineer" OR "Node.js") India OR Bangalore OR Bengaluru OR Remote'
     enabled: true
 
+  # Role variants across the big three (Frontend / Data / DevOps)
+  - name: LinkedIn — India Frontend / React / UI
+    query: 'site:linkedin.com/jobs/view ("Frontend Developer" OR "React Developer" OR "UI Engineer" OR "JavaScript Developer") India OR Bangalore OR Bengaluru OR Hyderabad OR Pune OR Remote'
+    enabled: true
+
+  - name: LinkedIn — India DevOps / Cloud / SRE
+    query: 'site:linkedin.com/jobs/view ("DevOps Engineer" OR "Site Reliability" OR "Cloud Engineer" OR "Platform Engineer") India OR Bangalore OR Hyderabad OR Remote'
+    enabled: true
+
+  - name: Indeed — India Frontend / React / UI
+    query: 'site:in.indeed.com/viewjob OR site:indeed.com/viewjob ("Frontend Developer" OR "React Developer" OR "UI Engineer" OR "JavaScript Developer") India OR Bangalore OR Hyderabad OR Remote'
+    enabled: true
+
+  - name: Naukri — India Frontend / React / UI
+    query: 'site:naukri.com/job-listings ("Frontend Developer" OR "React Developer" OR "UI Engineer" OR "JavaScript Developer") India OR Bangalore OR Bengaluru OR Hyderabad OR Remote'
+    enabled: true
+
+  - name: Naukri — India Data / Python / ML
+    query: 'site:naukri.com/job-listings ("Data Engineer" OR "Python Developer" OR "Machine Learning" OR "Data Scientist") India OR Bangalore OR Bengaluru OR Hyderabad OR Remote'
+    enabled: true
+
+  # Other India-focused tech job portals (no public ATS API → WebSearch only)
+  - name: Instahyre — India Tech Roles
+    query: 'site:instahyre.com ("Backend Developer" OR "Frontend Developer" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Bengaluru OR Remote'
+    enabled: true
+
+  - name: Cutshort — India Tech Roles
+    query: 'site:cutshort.io ("Backend Developer" OR "Frontend Developer" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Remote'
+    enabled: true
+
+  - name: Hirist — India Tech Roles
+    query: 'site:hirist.tech OR site:hirist.com ("Backend Developer" OR "Frontend Developer" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Remote'
+    enabled: true
+
+  - name: Wellfound (AngelList) — India Startups
+    query: 'site:wellfound.com/jobs ("Backend" OR "Frontend" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Bengaluru OR Remote'
+    enabled: true
+
+  - name: foundit (Monster) — India Tech Roles
+    query: 'site:foundit.in ("Backend Developer" OR "Frontend Developer" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Remote'
+    enabled: true
+
+  - name: TimesJobs — India Tech Roles
+    query: 'site:timesjobs.com ("Backend Developer" OR "Frontend Developer" OR "Full Stack" OR "Software Engineer") India OR Bangalore OR Remote'
+    enabled: true
+
 # -- Tracked companies --
 # Companies whose career pages are checked directly.
 # scan_method: playwright (default), websearch, local_parser
